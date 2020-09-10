@@ -2,8 +2,8 @@
 
     class ActivitiesController extends Activities{
         
-        public function createActivity($activity, $evidence, $dateofactivity){
-            $this->setActivity($activity, $evidence, $dateofactivity);
+        public function createActivity($activity, $evidence){
+            $this->setActivity($activity, $evidence);
         }
 
     }

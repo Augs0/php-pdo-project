@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+header h1,
+header h2 {
+  padding: 10px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.button {
+  margin-top: 0.5rem;
+}
+
+.hilite-one {
+  border-bottom: 9px solid #00d1b2;
+}
+
+.hilite-two {
+  border-bottom: 9px solid #3298dc;
+}
+
+.table {
+  text-transform: uppercase;
+}
+
+@media (max-width: 460px) {
+  .table {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+  .table th {
+    display: none;
+  }
+  .table td {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5em;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0px;
+    white-space: nowrap;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  .table .dateofactivity {
+    border-bottom: black solid 3px;
+  }
+}
