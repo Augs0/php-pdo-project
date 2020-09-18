@@ -32,9 +32,9 @@ class Activities extends Dbh{
         return $activityRecord;
     }
 
-    protected function editActivity($activity, $evidence){
+    protected function updateActivity($activity, $evidence){
         $id = $_GET['id'];
-
+        
         $sql = "UPDATE small_wins SET activity=?, evidence=? WHERE id=?";
         $stmt = $this->connect()->prepare($sql);
         $result = $stmt->execute([$activity, $evidence, $id]);
@@ -43,12 +43,12 @@ class Activities extends Dbh{
        
     }
 
-    protected function deleteActivity($id){
+    protected function removeActivity($id){
         $id = $_GET['id'];
 
         $sql = "DELETE FROM small_wins WHERE id=?";
         $stmt = $this->connect()->prepare($sql);
-        if($stmt->execute($id)){
+        if($stmt->execute([$id])){
             header('Location: index.php');
         } else{
             echo 'Record not removed';

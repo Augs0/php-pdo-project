@@ -10,8 +10,8 @@
         if(empty($activity)){
             $message = 'Please add an activity';
         } else{
-            $addActivity = new ActivitiesController();
-            echo $addActivity->createActivity($activity, $evidence);
+            $activityController = new ActivitiesController();
+            echo $activityController->createActivity($activity, $evidence);
             
             header('Location: done.php');
             die();

@@ -1,23 +1,23 @@
 <?php 
     include 'includes/autoloader.inc.php';
 
-    $findActivity = new ActivitiesView();
-    $activityToEdit = $findActivity->showActivityToEdit();
+    $editActivityView = new ActivitiesView();
+    $activityToEdit = $editActivityView->showActivityToEdit();
 
     $message = '';
-    // $id = $_GET['id'];
-    
+   
+
     if(isset($_POST['edit-btn'])){
         
         $activity = $_POST['activity'];
         $evidence = $_POST['evidence'];
-        
-
+     
         if(empty($activity)){
             $message = 'Please do not leave activity blank';
         } else{
-            $editActivity = new ActivitiesController();
-            echo $editActivity->editActivity($activity, $evidence);
+            $activityController = new ActivitiesController();
+            
+            $activityController->editActivity($activity, $evidence);
             
             header('Location: index.php');
             die();
@@ -41,7 +41,7 @@
     </header>
     <main>
        <section class="container section">
-        <form method="POST" id="activityForm">
+        <form  method="POST" id="activityForm">
             <label class="label" for="activity">Activity:</label>
             <?php echo $message ;?>
             <input value="<?php echo $activityToEdit->activity ?>" class="input is-primary is-large" type="text" name="activity" id="activity"/>

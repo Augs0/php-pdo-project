@@ -33,10 +33,11 @@
                         <th class="has-background-primary">Activity</th>
                         <th class="has-background-info">Evidence</th>
                         <th class="has-background-primary">Date</th>
+                        <th class="has-background-info">Actions</th>
                     </tr>
             <?php
-              $activities = new ActivitiesView();
-              $allActivities = $activities->showActivities();
+              $activityView = new ActivitiesView();
+              $allActivities = $activityView->showActivities();
 
               foreach($allActivities as $activity){
             ?>

@@ -7,10 +7,11 @@
         }
 
         public function editActivity($activity, $evidence){
-            $this->editActivity($activity,$evidence);
+            $this->updateActivity($activity,$evidence);
         }
 
         public function deleteActivity($id){
-            $this->deleteActivity($id);
+            $this->removeActivity($id);
         }
+        
     }
