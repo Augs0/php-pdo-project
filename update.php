@@ -2,18 +2,18 @@
     include 'includes/autoloader.inc.php';
 
 
-    if(isset($_POST['submit-btn'])){
+    if(isset($_POST['edit-btn'])){
         $activity = $_POST['activity'];
         $evidence = $_POST['evidence'];
         $message;
 
         if(empty($activity)){
-            $message = 'Please add an activity';
+            $message = 'Please do not leave activity blank';
         } else{
-            $addActivity = new ActivitiesController();
-            echo $addActivity->createActivity($activity, $evidence);
+            $editActivity = new ActivitiesController();
+            echo $editActivity->editActivity($activity, $evidence, $id);
             
-            header('Location: done.php');
+            header('Location: index.php');
             die();
         }   
     }

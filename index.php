@@ -44,6 +44,8 @@
                     <td class="activity"><?php echo $activity['activity'] ?></td>
                     <td class="evidence"><?php echo $activity['evidence'] ?></td>
                     <td class="dateofactivity"><?php echo $activity['dateofactivity'] ?></td>
+                    <td><a href="edit.php?id=<?php echo $activity['id'] ?>">Edit</a>
+                    <a href="delete.php?id=<?php echo $activity['id'] ?>">Delete</a></td>
                 </tr>
                
             <?php      
